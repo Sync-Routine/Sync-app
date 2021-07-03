@@ -10,9 +10,6 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'mapa',
@@ -21,6 +18,14 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'loginusuario',
+    loadChildren: () => import('./loginusuario/loginusuario.module').then( m => m.LoginusuarioPageModule)
+  },
+  {
+    path: 'logingerente',
+    loadChildren: () => import('./logingerente/logingerente.module').then( m => m.LogingerentePageModule)
   },
 
 ];
