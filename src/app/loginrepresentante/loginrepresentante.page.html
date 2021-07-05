@@ -4,6 +4,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="purple">
+  <ion-grid>
+    <ion-button routerLink="/home">Voltar</ion-button>
+    <ion-row >
+      <ion-item color="favorite">
+        <ion-label >Usuário:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      
+      <ion-item color="favorite">
+        <ion-label>Senha:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-row>
 
+    <ion-row class="center">
+      <ion-button color="light" size="small">
+        Esqueci minha senha
+      </ion-button>
+      <ion-button color="light" size="small">
+        Login
+      </ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
