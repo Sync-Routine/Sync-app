@@ -7,7 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="purple">
-  <ion-button expand="full" (click)="goAnOtherPage()>Login como Gerente</ion-button>
-  <ion-button expand="full" (click)="goAnOtherPage()>Login como Representante</ion-button>
+  
+    <ion-button routerLink="/logingerente" expand="full">
+      Login como Gerente
+    </ion-button>
+  
+
+  <ion-button routerLink="/loginrepresentante" expand="full">Login como Representante</ion-button>
 
 </ion-content>

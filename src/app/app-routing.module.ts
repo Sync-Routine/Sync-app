@@ -20,13 +20,13 @@ const routes: Routes = [
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'loginusuario',
-    loadChildren: () => import('./loginusuario/loginusuario.module').then( m => m.LoginusuarioPageModule)
-  },
-  {
     path: 'logingerente',
     loadChildren: () => import('./logingerente/logingerente.module').then( m => m.LogingerentePageModule)
+  },  {
+    path: 'loginrepresentante',
+    loadChildren: () => import('./loginrepresentante/loginrepresentante.module').then( m => m.LoginrepresentantePageModule)
   },
+
 
 ];
 
