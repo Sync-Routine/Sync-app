@@ -3,19 +3,19 @@
     <ion-title>logingerente</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- tela de login -->
 <ion-content [fullscreen]="true" class="purple">
   <ion-grid>
     <ion-button routerLink="/home" fill="clear" color="dark"><ion-icon name="arrow-back-sharp"></ion-icon></ion-button>
     <ion-row >
       <ion-item color="favorite">
         <ion-label >Usuário:</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" required [(ngModel)] ="login"></ion-input>
       </ion-item>
       
       <ion-item color="favorite">
         <ion-label>Senha:</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="password" required [(ngModel)] ="senha"></ion-input>
       </ion-item>
     </ion-row>
 
@@ -23,7 +23,7 @@
       <ion-button color="light" size="small">
         Esqueci minha senha
       </ion-button>
-      <ion-button color="light" size="small">
+      <ion-button color="light" size="small" (click)="logar">
         Login
       </ion-button>
     </ion-row>
