@@ -22,15 +22,15 @@ private api="https://localhost/api";
 
   ngOnInit() {
   }
-  logar(){
-    this.http.get<any[]>(this.api+"logar.php?usuario=" + this.login + "&senha=" + this.senha)
-    .subscribe (dados=>{
-      if(dados.length>0){
-        this.logado=dados[0].nome;
-        this.router.navigate(['/mapa']);
-      })
+  // logar(){
+  //   this.http.get<any[]>(this.api+"logar.php?usuario=" + this.login + "&senha=" + this.senha)
+  //   .subscribe (dados=>{
+  //     if(dados.length>0){
+  //       this.logado=dados[0].nome;
+  //       this.router.navigate(['/mapa']);
+  //     })
      
-  }
+  // }
 
 
 
