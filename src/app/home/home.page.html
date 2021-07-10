@@ -6,11 +6,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="purple">
-    <ion-button routerLink="/logingerente" expand="full" shape="round">
+<ion-content [fullscreen]="true" class="purple" class="centralizar">
+    <ion-button routerLink="/logingerente" shape="round" color="dark" size="medium" expand="block">
      gerente 
     </ion-button>
-  <ion-button routerLink="/loginrepresentante" expand="full" shape="round">Representante</ion-button>
-<ion-button routerLink="/mapa"  >map</ion-button>
-<ion-button routerLink="/perfil"  >perfil</ion-button>
+  <ion-button routerLink="/loginrepresentante" expand="block" shape="round" color="dark">
+    Representante
+  </ion-button>
+<ion-button routerLink="/mapa">
+  map
+</ion-button>
+<ion-button routerLink="/perfil">
+  perfil
+</ion-button>
 </ion-content>
