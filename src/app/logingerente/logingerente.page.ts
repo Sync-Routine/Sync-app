@@ -32,7 +32,9 @@ private api="https://localhost/api/";
       }
     })
   }
+
   registrar(){
     this.http.get<any[]>(this.api+"registrar.php?usuario=" + this.login + "&senha=" + this.senha)
   }
+  
 }
