@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginrepresentantePage implements OnInit {
 
   
-  login:String="";
+  usuario:String="";
   senha:String="";
   logado=false;
   private api="https://localhost/api/";  
@@ -23,7 +23,7 @@ export class LoginrepresentantePage implements OnInit {
   }
 
   logar(){
-    this.http.get<any[]>(this.api+"logar.php?usuario=" + this.login + "&senha=" + this.senha)
+    this.http.get<any[]>(this.api+"logar.php?usuario=" + this.usuario + "&senha=" + this.senha)
     .subscribe( dados=>{
       if(dados.length>0){
         this.logado=dados[0].nome;
