@@ -15,7 +15,7 @@ export class LogingerentePage implements OnInit {
   senha:String="";
   logado=false;
 
-private api="https://localhost/api/";
+private api="https://localhost/api/";  
 
 
   constructor(private http:HttpClient, private router:Router) { }
@@ -31,7 +31,8 @@ private api="https://localhost/api/";
         this.router.navigate(['/mapa']);
       }
     })
-
-
-
-  }}
+  }
+  registrar(){
+    this.http.get<any[]>(this.api+"registrar.php?usuario=" + this.login + "&senha=" + this.senha)
+  }
+}
