@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mapa',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaPage implements OnInit {
 
-  constructor() { }
+  constructor(private menu: MenuController) { }
+
+  openEnd() {
+    this.menu.open('end');
+  }
+
 
   ngOnInit() {
   }
