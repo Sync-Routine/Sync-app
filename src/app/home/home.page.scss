@@ -64,8 +64,8 @@ ion-content{
       
       width:100% !important;  
       height : 100% !important;  
-      max-width: 25px !important;  //any size
-      max-height: 25px !important; //any size 
+      max-width: 20px !important;  //any size
+      max-height: 20px !important; //any size 
       vertical-align: center;
       display: table-cell;
       margin-top: 210px;
@@ -78,8 +78,14 @@ ion-content{
         height:30px;
         margin-left: 60px;
         margin-top: 5px;
-        color: #2a2049;
+        color:white;
       }
 
+
+
+      .centraliza{
+       margin-left: 90px;
+        
+      }
 
     
