@@ -8,3 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   constructor() {}
 }
+{
+  title: 'lista';
+  url: '/lista';
+  icon:'list' 
+}
