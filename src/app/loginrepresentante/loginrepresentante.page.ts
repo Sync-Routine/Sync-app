@@ -15,7 +15,7 @@ export class LoginrepresentantePage implements OnInit {
   usuario:String="";
   senha:String="";
   logado=false;
-  private api="https://localhost/api/";  
+  private api="http://localhost/api/";  
 
   constructor(private http:HttpClient, private router:Router) { }
 
@@ -30,7 +30,7 @@ export class LoginrepresentantePage implements OnInit {
         this.router.navigate(['/mapa']);
       }
     })
-
+    
 
 
   }

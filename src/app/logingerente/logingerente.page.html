@@ -1,9 +1,11 @@
+
 <ion-header>
   <ion-toolbar>
     <ion-title class="centraliza">login gerente</ion-title>
   </ion-toolbar>
 </ion-header>
 <!-- tela de login -->
+
 <ion-content [fullscreen]="true" class="purple">
   <ion-grid>
     <ion-button routerLink="/home" fill="clear" color="dark">
@@ -22,7 +24,7 @@
     </ion-row>
 
     <ion-row class="center">
-      <ion-button color="light" size="small" (click)="registrar()">
+      <ion-button color="light" id="registrar" (click)="openEnd()" size="small">
         Criar conta
       </ion-button>
       <ion-button color="light" size="small" (click)="logar()">
@@ -30,4 +32,30 @@
       </ion-button>
     </ion-row>
   </ion-grid>
+  
+  <ion-menu side="end" contentId="registrar">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title>Criar conta</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-row>
+        <ion-item color="favorite">
+          <ion-label>Usuário novo:</ion-label>
+          <ion-input type="text" required [(ngModel)]="usuario"></ion-input>
+        </ion-item>
+  
+        <ion-item color="favorite">
+          <ion-label>Senha nova:</ion-label>
+          <ion-input type="password" required [(ngModel)]="senha"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-button color="light" size="small" (click)="registrar" >
+        Criar conta
+      </ion-button>
+    </ion-content>
+  </ion-menu>
+  
+
 </ion-content>
