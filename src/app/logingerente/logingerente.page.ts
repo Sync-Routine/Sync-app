@@ -35,10 +35,8 @@ private api="http://localhost/api/";
 
  registrar(){
   this.http.get<any[]>(this.api+"logar.php?usuario=" + this.usuario + "&senha=" + this.senha)
-  .subscribe( dados=>{
-    if(dados.length>0){
-      this.router.navigate(['/home']);
-    }
+  .subscribe( dados=>{  
+      this.router.navigate(['/home']); 
   })
  }
 
