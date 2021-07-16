@@ -18,7 +18,7 @@ export class MapaPage implements OnInit {
     this.minhaAgenda.push(this.inputTexto);
   }
   remover(indice) {
-    this.minhaAgenda.splice(0,1);
+    this.minhaAgenda.splice(indice,1);
   }
   constructor(private menu: MenuController) {
     
