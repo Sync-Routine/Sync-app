@@ -30,18 +30,34 @@
         <ion-title class="amorzinho">Agenda</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content [fullscreen]="true">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            <ion-input  #input 
+                        [(ngModel)]="inputTexto" 
+                        (keyup.enter)="adiciona()">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="adiciona()" >
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
       <ion-list>
-        <ion-item>eu</ion-item>
-        <ion-item>amo</ion-item>
-        <ion-item>o</ion-item>
-        <ion-item>professor</ion-item>
-        <ion-item>adail</ion-item>
-        <ion-item>assinado</ion-item>
-        <ion-item>guilherme</ion-item>
-        <ion-item>e</ion-item>
-        <ion-item>alecsander</ion-item>
+        <ion-item *ngFor="let item of mapa.getLista(); 
+                          let indice=index">
+          <ion-label>{{item[1]}}</ion-label>
+          <ion-fab-button size="small" 
+                          color="danger"
+                          (click)="remover(item[0])">
+            <ion-icon name="remove-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-item>
       </ion-list>
+      <ion-button (click)="mapa.limpar()">LIMPAR TUDO</ion-button>
     </ion-content>
   </ion-menu>
 
