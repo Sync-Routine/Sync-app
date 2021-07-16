@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { removeSummaryDuplicates } from '@angular/compiler';
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { MenuController, ToastController } from '@ionic/angular';
 
 @Component({
@@ -12,11 +12,14 @@ export class MapaPage implements OnInit {
   mapa: any;
   meuInput: any;
 
+  @ViewChild('input') myInput;
+
   minhaAgenda = ["katori gay"];
   inputTexto ="";
   adiciona() {
     this.minhaAgenda.push(this.inputTexto);
     this.inputTexto="";
+    this.myInput.setFocus()
   }
   remover(indice) {
     this.minhaAgenda.splice(indice,1);
