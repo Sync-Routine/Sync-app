@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { MenuController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mapa',
@@ -7,6 +8,8 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./mapa.page.scss'],
 })
 export class MapaPage implements OnInit {
+  mapa: any;
+  meuInput: any;
 
   
 
@@ -22,5 +25,11 @@ export class MapaPage implements OnInit {
 
   ngOnInit() {
   }
-
 }
+
+
+
+
+  //adadadadad
+
+  
