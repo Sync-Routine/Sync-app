@@ -16,6 +16,7 @@ export class MapaPage implements OnInit {
   inputTexto ="";
   adiciona() {
     this.minhaAgenda.push(this.inputTexto);
+    this.inputTexto="";
   }
   remover(indice) {
     this.minhaAgenda.splice(indice,1);
