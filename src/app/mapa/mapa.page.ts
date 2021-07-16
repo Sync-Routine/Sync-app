@@ -8,7 +8,11 @@ import { MenuController } from '@ionic/angular';
 })
 export class MapaPage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  
+
+  constructor(private menu: MenuController) {
+    
+   }
 
   openEnd() {
     this.menu.open('end');
