@@ -43,7 +43,7 @@
         <ion-row>
           <ion-fab vertical="top" horizontal="end" slot="">
             <ion-fab-button size="small" (click)="adiciona()">
-              <ion-icon name="add-circle-outline"></ion-icon>
+              <ion-icon name="add-outline"></ion-icon>
             </ion-fab-button>
           </ion-fab>
         </ion-row>
@@ -52,7 +52,7 @@
         <ion-item *ngFor="let item of minhaAgenda; let indice=index">
           <ion-label>{{item}}</ion-label>
           <ion-fab-button size="small" color="danger" (click)="remover(indice)">
-            <ion-icon name="remove-circle-outline"></ion-icon>
+            <ion-icon name="remove-outline"></ion-icon>
           </ion-fab-button>
         </ion-item>
       </ion-list>

@@ -14,7 +14,7 @@ export class MapaPage implements OnInit {
 
   @ViewChild('input') myInput;
 
-  minhaAgenda = ["katori gay"];
+  minhaAgenda = [];
   inputTexto ="";
   adiciona() {
     this.minhaAgenda.push(this.inputTexto);
