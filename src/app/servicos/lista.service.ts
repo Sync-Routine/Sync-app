@@ -7,38 +7,39 @@ import { ToastController } from '@ionic/angular';
 })
 export class ListaService {
 
-  private minhaAgenda;
+  private minhaLista;
 
-   public getLista(){
-    return this.minhaAgenda;
+  public getLista(){
+    return this.minhaLista;
   }
 
-  public setLista(agenda){
-    this.minhaAgenda=agenda;
+  public setLista(lista){
+     this.minhaLista=lista;
   }
 
-  constructor(private http:HttpClient, public toastController: ToastController){
-    this.atualizaAgenda()
+  constructor(private http:HttpClient, 
+              public toastController: ToastController) {
+    this.atualizaLista()  
   }
-   
-  atualizaAgenda(){
-    this.minhaAgenda=[] ;
+
+  atualizaLista(){
+    this.minhaLista=[] ;
     this.http.get<any[]>("http://localhost/api/consulta.php")
               .subscribe( dados => {
                  dados.forEach( item => {
-                  this.minhaAgenda.push([item.conteudo])
+                  this.minhaLista.push([item.codigo,item.conteudo])
                  })
               })
   }
-
+  
   async ngOnInit() {
     
   }
 
-  public async add(valor) {
-    this.http.get<any[]>("http://localhost/api/incluir.php?valor="+valor)
+  public async add(conteudo) {
+    this.http.get<any[]>("http://localhost/api/incluir.php?conteudo="+conteudo)
               .subscribe( dados => {
-                this.atualizaAgenda();
+                this.atualizaLista();
                 this.presentToast("Item incluido!");
               })
   }
@@ -46,7 +47,7 @@ export class ListaService {
   public async remove(indice) {
     this.http.get<any[]>("http://localhost/api/remover.php?codigo="+indice.toString())
               .subscribe( dados => {
-                this.atualizaAgenda();
+                this.atualizaLista();
                 this.presentToast("Item removido!");
               })
   }
@@ -61,8 +62,8 @@ export class ListaService {
   public async limpar() {
     this.http.get<any[]>("http://localhost/api/limpar.php")
               .subscribe( dados => {
-                this.atualizaAgenda();
-                this.presentToast("Agenda removida!");
+                this.atualizaLista();
+                this.presentToast("Lista removida!");
               })
   }
   

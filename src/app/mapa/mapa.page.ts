@@ -15,8 +15,7 @@ export class MapaPage implements OnInit {
 
   @ViewChild('input') myInput;
 
-  
-  inputTexto ="";
+  inputTexto:String = "";
 
   listaService:ListaService;
 
@@ -24,16 +23,16 @@ export class MapaPage implements OnInit {
     this.listaService=new ListaService(http,toastController);   
    }
 
-  adiciona() {
-    this.listaService.add(this.inputTexto)
+   adiciona() {
+    this.listaService.add(this.inputTexto);
     this.inputTexto="";
-    this.myInput.setFocus()
+    this.myInput.setFocus();
   }
+
   remover(indice) {
     this.listaService.remove(indice);
   }
   
-
   openEnd() {
     this.menu.open('end');
   }

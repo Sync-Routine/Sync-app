@@ -33,7 +33,7 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      
+
       <ion-grid>
         <ion-row>
           <ion-col size="8.8">
@@ -51,7 +51,7 @@
       </ion-grid>
       <ion-list>
         <ion-item *ngFor="let item of listaService.getLista(); let indice=index">
-          <ion-label>{{item}}</ion-label>
+          <ion-label>{{item[1]}}</ion-label>
           <ion-fab-button size="small" color="danger" (click)="remover(indice)">
             <ion-icon name="remove-outline"></ion-icon>
           </ion-fab-button>
