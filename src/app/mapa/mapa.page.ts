@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { removeSummaryDuplicates } from '@angular/compiler';
 import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { MenuController, ToastController } from '@ionic/angular';
+import { ListaService } from '../servicos/lista.service';
 
 @Component({
   selector: 'app-mapa',
@@ -14,18 +15,21 @@ export class MapaPage implements OnInit {
 
   @ViewChild('input') myInput;
 
-  minhaAgenda = [];
+  
   inputTexto ="";
+
+  listaService:ListaService;
+
   adiciona() {
-    this.minhaAgenda.push(this.inputTexto);
+    this.listaService.add(this.inputTexto)
     this.inputTexto="";
     this.myInput.setFocus()
   }
   remover(indice) {
-    this.minhaAgenda.splice(indice,1);
+    this.listaService.excluir(indice);
   }
-  constructor(private menu: MenuController) {
-    
+  constructor(private menu: MenuController, private http:HttpClient) {
+    this.listaService=new ListaService(http);   
    }
 
   openEnd() {
