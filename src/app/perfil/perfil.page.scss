@@ -1,33 +1,15 @@
-.image-center {
-    margin: 0 auto;
+.image-center{
+    margin:0 auto;
+        
+        width:100% !important;  
+        height : 100% !important;  
+        max-width: 100px !important;  //any size
+        max-height: 100px !important; //any size 
+        }
 
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100px !important; //any size
-    max-height: 100px !important; //any size
-}
 
-.amorzinho {
-    color: #2a2049;
-    margin-top: 12px;
-}
 
-.bonito {
-    margin-top: 12px;
-    margin-left: 8px;
-}
-
-.amorzinhoo {
-    color: #2a2049;
-    margin-top: -8px;
-}
-
-.botaoredondo {
-    width: 18px;
-    height: 18px;
-}
-.centraliza{
-    margin-left: 94px; 
-    margin-top: -8px;
-   }
-
+        .amorzinho{ 
+            color: #2a2049;
+        }
+      

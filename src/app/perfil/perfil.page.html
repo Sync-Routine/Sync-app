@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="centraliza">Perfil</ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -9,22 +9,17 @@
       <img src="https://img.icons8.com/ios/50/000000/user--v1.png" />
     </ion-avatar>
   </ion-item>
-    <ion-row class="bonito">usuário: exemplo123</ion-row>
-  <ion-button expand="block" size="small" shape="round"  fill="clear" class="amorzinho" >
+  <ion-chip>
+    <ion-label>usuário</ion-label>
+  </ion-chip>
+  <ion-button expand="block" size="small" shape="round"  fill="clear" class="amorzinho">
     trocar usuário
   </ion-button>
-  
-    <ion-row>
-      <ion-col class="bonito" >senha: ***********</ion-col>
-      <ion-col> 
-        <ion-button fill="clear" color="dark" >
-          <ion-icon slot="icon-only" name="eye-off-outline" class="botaoredondo"></ion-icon>
-        </ion-button>
-      </ion-col>
-    </ion-row> 
-  
-  <ion-button expand="block" size="small" shape="round"  fill="clear" class="amorzinhoo">trocar senha</ion-button>
-  <ion-button routerLink="/mapa" shape="round" color="dark" fill="clear">
-    <ion-icon name="arrow-back-sharp" ></ion-icon>
+  <ion-chip>
+    <ion-label>senha</ion-label>
+  </ion-chip>
+  <ion-button expand="block" size="small" shape="round"    fill="clear" class="amorzinho">trocar senha</ion-button>
+  <ion-button routerLink="/mapa" shape="round" color="light">
+    <ion-icon name="arrow-back-sharp"></ion-icon>
   </ion-button>
 </ion-content>
