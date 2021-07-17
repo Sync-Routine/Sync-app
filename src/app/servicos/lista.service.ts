@@ -1,44 +1,69 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListaService {
 
-  private minhaAgenda = [];
+  private minhaAgenda;
 
    public getLista(){
     return this.minhaAgenda;
   }
 
-  public setLista(lista){
-    this.minhaAgenda=lista;
+  public setLista(agenda){
+    this.minhaAgenda=agenda;
   }
 
-  constructor(private http:HttpClient){
-    this.atualizadaLista()
+  constructor(private http:HttpClient, public toastController: ToastController){
+    this.atualizaAgenda()
   }
    
-  atualizadaLista(){
+  atualizaAgenda(){
     this.minhaAgenda=[] ;
-    this.http.get<any[]>("https://localhost/api/consulta.php")
-    .subscribe( dados=>{
-      dados.forEach item=>{
-       this.minhaAgenda.push([item.descricao])
-      }})
+    this.http.get<any[]>("http://localhost/api/consulta.php")
+              .subscribe( dados => {
+                 dados.forEach( item => {
+                  this.minhaAgenda.push([item.conteudo])
+                 })
+              })
   }
 
-  public add(valor) {
-    this.minhaAgenda.push(valor);
-  }
-  public excluir(indice) {
-    this.minhaAgenda.splice(indice,1);
+  async ngOnInit() {
+    
   }
 
-public async kekw(valor){
+  public async add(valor) {
+    this.http.get<any[]>("http://localhost/api/incluir.php?valor="+valor)
+              .subscribe( dados => {
+                this.atualizaAgenda();
+                this.presentToast("Item incluido!");
+              })
+  }
 
-  await this.atualizadaLista();
-}
+  public async remove(indice) {
+    this.http.get<any[]>("http://localhost/api/remover.php?codigo="+indice.toString())
+              .subscribe( dados => {
+                this.atualizaAgenda();
+                this.presentToast("Item removido!");
+              })
+  }
+  async presentToast(mens) {
+    const toast = await this.toastController.create({
+      message: mens,
+      duration: 2000
+    });
+    toast.present();
+  }
 
+  public async limpar() {
+    this.http.get<any[]>("http://localhost/api/limpar.php")
+              .subscribe( dados => {
+                this.atualizaAgenda();
+                this.presentToast("Agenda removida!");
+              })
+  }
+  
 }

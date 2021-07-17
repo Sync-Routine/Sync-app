@@ -20,17 +20,19 @@ export class MapaPage implements OnInit {
 
   listaService:ListaService;
 
+  constructor(private menu: MenuController, private http:HttpClient, public toastController: ToastController) {
+    this.listaService=new ListaService(http,toastController);   
+   }
+
   adiciona() {
     this.listaService.add(this.inputTexto)
     this.inputTexto="";
     this.myInput.setFocus()
   }
   remover(indice) {
-    this.listaService.excluir(indice);
+    this.listaService.remove(indice);
   }
-  constructor(private menu: MenuController, private http:HttpClient) {
-    this.listaService=new ListaService(http);   
-   }
+  
 
   openEnd() {
     this.menu.open('end');
@@ -41,7 +43,5 @@ export class MapaPage implements OnInit {
 }
 
  
-
-  //adadadadad
 
   
