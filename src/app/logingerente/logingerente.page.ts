@@ -15,7 +15,7 @@ export class LogingerentePage implements OnInit {
   usuario:String="";
   senha:String="";
 
-private api="http://localhost/api/";  
+private api="http://localhost/api/";
 
 
   constructor(private menu: MenuController,private http:HttpClient, private router:Router) { }
@@ -24,7 +24,7 @@ private api="http://localhost/api/";
   }
 
   logar(){
-   
+
     this.http.get<any[]>(this.api+"logar.php?usuario=" + this.usuario + "&senha=" + this.senha)
     .subscribe( dados=>{
       if(dados.length>0){
@@ -34,9 +34,9 @@ private api="http://localhost/api/";
   }
 
  registrar(){
-  this.http.get<any[]>(this.api+"logar.php?usuario=" + this.usuario + "&senha=" + this.senha)
-  .subscribe( dados=>{  
-      this.router.navigate(['/home']); 
+  this.http.get<any[]>(this.api+"registrar.php?usuario=" + this.usuario + "&senha=" + this.senha)
+  .subscribe( dados=>{
+      this.router.navigate(['/home']);
   })
  }
 
@@ -44,6 +44,6 @@ private api="http://localhost/api/";
     this.menu.open('end');
   }
 
- 
-  
+
+
 }
